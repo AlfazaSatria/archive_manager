@@ -46,7 +46,7 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         $title = "Register";
-        $departments= Department::whereNotIn('id', [1,3])->get();
+        $departments= Department::whereNotIn('id', [3])->get();
         return view('auth.register', compact('title','departments'));
     }
 

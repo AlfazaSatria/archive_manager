@@ -24,3 +24,12 @@ Route::post('/register/submit', 'Auth\RegisterController@validateRegister')->nam
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('departmens')->group(function () {
+    Route::name('departments.')->group(function () {
+        Route::get('index', 'DepartmentsController@index')->name('show');
+        Route::get('show/add/department', 'DepartmentsController@showAddDepartment')->name('show.add.department');
+        Route::post('add', 'DepartmentsController@addDepartments')->name('add');
+        Route::delete('delete/{id}', 'DepartmentsController@destroy')->name('destroy');
+    });
+});

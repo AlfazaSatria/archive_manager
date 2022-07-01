@@ -13,6 +13,11 @@
 					<i class="fas fa-home"></i><span>Home</span>
 				</a>
 			</li>
+			<li class="@if ($title == 'Departemen') active @endif">
+				<a class="nav-link" href="{{ route('departments.show') }}">
+					<i class="fas fa-home"></i><span>Departemen</span>
+				</a>
+			</li>
 		</ul>
 	
 	</aside>
