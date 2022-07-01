@@ -10,12 +10,17 @@
                 </div>
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h4>Login</h4>
+                        <h4>Register</h4>
                     </div>
 
                     <div class="card-body">
-                        <form method="POST" method="POST" action="{{ route('login.auth') }}" class="needs-validation" novalidate="">
+                        <form method="POST" method="POST" action="{{ route('register.auth') }}" class="needs-validation" novalidate="">
                             @csrf
+                            <div class="form-group">
+                                <label for="nopek">Username</label>
+                                <input type="text" class="form-control" name="name" tabindex="1" required="" autofocus="">
+
+                            </div>
                             <div class="form-group">
                                 <label for="nopek">Email</label>
                                 <input type="text" class="form-control" name="email" tabindex="1" required="" autofocus="">
@@ -45,7 +50,7 @@
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                                    Login
+                                    Register
                                 </button>
                                 <div class="text-center mt-4 mb-3">
                                     <div class="text-job text-muted">Managed by Alfaza</div>

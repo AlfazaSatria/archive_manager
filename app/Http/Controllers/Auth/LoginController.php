@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Department;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -45,22 +46,21 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         $title = "Login";
-        return view('auth.login', compact('title'));
+        $departments= Department::all();
+        return view('auth.login', compact('title','departments'));
     }
 
     public function validateLogin(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('email', 'password','department_id');
 
         if (Auth::attempt($credentials)) {
-            if (Auth::user()->coverage == 0) {
                 return redirect(RouteServiceProvider::HOME);
-            } else {
-                return redirect()->route('marketplace.show.index.order');
-            }
 
-        } else {
-            Session::flash('errorMessage', 'Password Salah!');
+        }  
+        
+        else {
+            Session::flash('errorMessage', 'Username atau Password Salah!');
             return redirect('login');
         }
 

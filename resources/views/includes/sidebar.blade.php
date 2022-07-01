@@ -1,10 +1,10 @@
 <div class="main-sidebar">
 	<aside id="sidebar-wrapper">
 		<div class="sidebar-brand">
-			<a href="{{ route('home') }}">Bisniso</a>
+			<a href="{{ route('home') }}">Indofood</a>
 		</div>
 		<div class="sidebar-brand sidebar-brand-sm">
-			<a href="{{ route('home') }}">Bisniso</a>
+			<a href="{{ route('home') }}">Indofood</a>
 		</div>
 		<ul class="sidebar-menu">
 			<li class="menu-header">Dashboard</li>
@@ -14,15 +14,6 @@
 				</a>
 			</li>
 		</ul>
-		<ul class="sidebar-menu">
-			<li class="menu-header">Officematch</li>
-			<li class="@if ($title == 'Apartment') active @endif">
-				<a class="nav-link" href="{{ route('officematch.show.index.apartments') }}">
-					<i class="fas fa-home"></i><span>Apartment</span>
-				</a>
-			</li>
-
-			
-		</ul>
+	
 	</aside>
 </div>

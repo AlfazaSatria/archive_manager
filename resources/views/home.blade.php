@@ -20,15 +20,15 @@
 
 <div class="card">
   <div class="card-header">
-    <h4>Bisniso</h4>
+    <h4>Indofood</h4>
   </div>
   <div class="card-body">
     <p>
-      Admin Tools Bisniso
+      Admin Tools Indofood
     </p>
   </div>
   <div class="card-footer bg-whitesmoke">
-    Bisniso Admin
+    Indofood Admin
   </div>
 </div>
 

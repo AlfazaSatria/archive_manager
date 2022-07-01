@@ -55,54 +55,8 @@ return [
             'visibility' => 'public',
         ],
 
-        'admintools' => [
-            'driver' => 'local',
-            'root' =>env('APP_ENV') == 'production'?
-                    '/var/www/toolbox.bisniso.id/storage/app/public':
-                    '/var/www/toolbox.bisniso.id/storage/app/public',
-        ],
+       
 
-        'marketplace' => [
-            'driver' => 'local',
-            'root' =>env('APP_ENV') == 'production'?
-                    '/var/www/endmarket.bisniso.id/storage/app/public':
-                    '/var/www/endmarket.bisniso.id/storage/app/public',
-        ],
-
-        // 'pembudidaya' => [
-        //     'driver' => 'local',
-        //     'root' =>env('APP_ENV') == 'production'?
-        //             '/var/www/fishery.panenpanen.id/storage/app/public':
-        //             '/public_html/lelenesia/panen-ikan-backend/storage/app/public',
-        // ],
-
-        // 'petani' => [
-        //     'driver' => 'local',
-        //     'root' =>env('APP_ENV') == 'production'?
-        //             '/var/www/agriculture.panenpanen.id/storage/app/public':
-        //             '/public_html/panenpanen.com/panen-sayur-backend/storage/app/public',
-        // ],
-
-        // 'pebuah' => [
-        //     'driver' => 'local',
-        //     'root' =>env('APP_ENV') == 'production'?
-        //             '/var/www/fruit.panenpanen.id/storage/app/public':
-        //             '/public_html/panenpanen.com/panen-buah-backend/storage/app/public',
-        // ],
-
-        // 'peternak' => [
-        //     'driver' => 'local',
-        //     'root' =>env('APP_ENV') == 'production'?
-        //             '/var/www/husbandry.panenpanen.id/storage/app/public':
-        //             '/public_html/panenpanen.com/panen-ternak-backend/storage/app/public',
-        // ],
-
-        'pabrik' => [
-            'driver' => 'local',
-            'root' =>env('APP_ENV') == 'production'?
-                    '/var/www/supplier.panenpanen.id/storage/app/public':
-                    '/public_html/panenpanen.com/panen-ternak-backend/storage/app/public',
-        ],
 
         's3' => [
             'driver' => 's3',

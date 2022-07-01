@@ -15,10 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('auth', 'Auth\LoginController@validateLogin')->name("login.auth");
 
+Route::get('/register','Auth\RegisterController@showRegistrationForm')->name("register.view");
+Route::post('/register/submit', 'Auth\RegisterController@validateRegister')->name("register.auth");
+
+
 
 
 Auth::routes();
+
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-
