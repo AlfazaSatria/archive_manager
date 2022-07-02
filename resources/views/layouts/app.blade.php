@@ -27,10 +27,10 @@
 
     <footer class="main-footer">
         <div class="footer-left">
-            Copyright &copy; 2021
+            Copyright &copy; 2022
             <div class="bullet"></div>
         </div>
-        <div class="footer-right">Panen - Panen Admin</div>
+        <div class="footer-right">Indofood</div>
     </footer>
 
 </body>

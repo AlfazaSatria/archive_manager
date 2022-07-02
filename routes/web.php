@@ -33,3 +33,12 @@ Route::prefix('departmens')->group(function () {
         Route::delete('delete/{id}', 'DepartmentsController@destroy')->name('destroy');
     });
 });
+
+Route::prefix('files')->group(function (){
+    Route::name('files.')->group(function (){
+        Route::get('index', 'FileController@index')->name('show');
+        Route::get('show/add/file', 'FileController@showAddFile')->name('show.add.file');
+        Route::post('add', 'FileController@addFiles')->name('add');
+        Route::delete('delete/{id}', 'FileController@destroy')->name('destroy');
+    });
+});

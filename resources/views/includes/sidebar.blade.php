@@ -18,6 +18,11 @@
 					<i class="fas fa-home"></i><span>Departemen</span>
 				</a>
 			</li>
+			<li class="@if ($title == 'File') active @endif">
+				<a class="nav-link" href="{{ route('files.show') }}">
+					<i class="fas fa-file"></i><span>File</span>
+				</a>
+			</li>
 		</ul>
 	
 	</aside>

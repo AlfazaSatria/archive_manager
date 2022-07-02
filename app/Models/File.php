@@ -3,12 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Str;
 class File extends Model
 {
     
     protected $table = 'files';
     protected $fillable = [
-        'no', 'department_id', 'description', 'file_name',
+        'department_id', 'description', 'file_name',
     ];
+
+    public function setSlugAttribute($value)
+    {
+        $this->attributes['slug'] = Str::slug($value);
+    }
 }
