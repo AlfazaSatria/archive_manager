@@ -40,5 +40,6 @@ Route::prefix('files')->group(function (){
         Route::get('show/add/file', 'FileController@showAddFile')->name('show.add.file');
         Route::post('add', 'FileController@addFiles')->name('add');
         Route::delete('delete/{id}', 'FileController@destroy')->name('destroy');
+        Route::get('download/{id}', 'FileController@downloadFile')->name('download.file');
     });
 });
