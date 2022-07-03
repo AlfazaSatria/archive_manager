@@ -41,7 +41,7 @@ $.ajaxSetup({
             },
             columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex', title: 'No'},
-            {data: 'department_id', name: 'department_id', title: 'Nama Departments'},
+            {data: 'department.name', name: 'department.name', title: 'Nama Departments'},
             {data: 'description', name: 'description', title: 'Deskripsi'},
             {data: 'file_name', name: 'file_name', title: 'File'},
             {data: 'action', name: 'action', title: 'Aksi'},

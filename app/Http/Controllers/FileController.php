@@ -20,7 +20,7 @@ class FileController extends Controller
     {
         $departments = Department::all();
         if (request()->ajax()) {
-            $files=File::all();
+            $files=File::with('department')->get();
             return Datatables::of($files)
             ->addIndexColumn()
             
