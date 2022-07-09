@@ -53,7 +53,7 @@
                                     Register
                                 </button>
                                 <div class="text-center mt-4 mb-3">
-                                    <div class="text-job text-muted">Managed by Alfaza</div>
+                                    <div class="text-job text-muted">Managed by Factory Manager</div>
                                 </div>
                             </div>
                         </form>
@@ -61,9 +61,6 @@
 
                     </div>
 
-                </div>
-                <div class="my-5 text-muted text-center">
-                    Crafted with ❤
                 </div>
 
             </div>
