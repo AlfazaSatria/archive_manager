@@ -19,9 +19,25 @@ class FileController extends Controller
 
     public function index()
     {
-        $departments = Department::all();
-        if (request()->ajax()) {
+        if (Auth::user()->department_id == 1 || Auth::user()->department_id == 2) {
+            $departments = Department::all();
             $files=File::with('department')->get();
+        }else if(Auth::user()->department_id == 3){
+            $departments = Department::whereIn('id', [3,17])->get();
+            $files=File::with('department')->whereIn('department_id', [3,17])->get();
+        }else if(Auth::user()->department_id == 4){
+            $departments = Department::whereIn('id', [4,13,14])->get();
+            $files=File::with('department')->whereIn('department_id', [4,13,14])->get();
+        }else if(Auth::user()->department_id == 5){
+            $departments = Department::whereIn('id', [5,6,7])->get();
+            $files=File::with('department')->whereIn('department_id', [5,6,7])->get();
+        }else{
+            $departments = Department::firstwhere('id', Auth::user()->department_id);
+            $files=File::where('department_id', Auth::user()->department_id)->get();
+        }
+       
+        if (request()->ajax()) {
+            
             return Datatables::of($files)
             ->addIndexColumn()
             
@@ -38,7 +54,22 @@ class FileController extends Controller
 
     public function showAddFile()
     {   
-        $departments= Department::all();
+        if (Auth::user()->department_id == 1 || Auth::user()->department_id == 2) {
+            $departments = Department::all();
+            
+        }else if(Auth::user()->department_id == 3){
+            $departments = Department::whereIn('id', [3,17])->get();
+          
+        }else if(Auth::user()->department_id == 4){
+            $departments = Department::whereIn('id', [4,13,14])->get();
+            
+        }else if(Auth::user()->department_id == 5){
+            $departments = Department::whereIn('id', [5,6,7])->get();
+          
+        }else{
+            $departments = Department::firstwhere('id', Auth::user()->department_id);
+           
+        }
         return view('admin.files.addFiles')->with('title', 'Tambah File')->with('departments', $departments);
     }
 

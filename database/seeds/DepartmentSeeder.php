@@ -91,5 +91,10 @@ class DepartmentSeeder extends Seeder
             'name' => 'Hygiene',
             'description' => 'Hygiene View'
         ]);
+
+        DB::table('departments')->insert([
+            'name' => 'Accounting',
+            'description' => 'Accounting View'
+        ]);
     }
 }
