@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use DataTables;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class FileController extends Controller
 {
