@@ -67,7 +67,7 @@ class FileController extends Controller
             $departments = Department::whereIn('id', [5,6,7])->get();
           
         }else{
-            $departments = Department::firstwhere('id', Auth::user()->department_id);
+            $departments = Department::where('id', Auth::user()->department_id)->get();
            
         }
         return view('admin.files.addFiles')->with('title', 'Tambah File')->with('departments', $departments);
