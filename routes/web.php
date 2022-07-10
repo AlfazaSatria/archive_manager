@@ -25,6 +25,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/password', 'FileController@changePasswordView')->name('password.change.view');
+Route::post('/password/change', 'FileController@changePassword')->name('password.change');
+
 Route::prefix('departmens')->group(function () {
     Route::name('departments.')->group(function () {
         Route::get('index', 'DepartmentsController@index')->name('show');

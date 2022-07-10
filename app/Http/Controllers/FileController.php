@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Department;
 use App\Models\File;
+use App\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use DataTables;
 use Exception;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class FileController extends Controller
 {
@@ -127,6 +129,31 @@ class FileController extends Controller
             $department= Department::firstwhere('id', $file->department_id);
             $file_path = storage_path('app/public/'.'Files_'. $department->name .'/'. $file->file_name);
             return response()->download($file_path);
+
+        }catch(Exception $err){
+            return response()->json([
+                'status' => '500',
+                'error' => $err->getMessage()
+            ], 500);
+        }
+    }
+
+    public function changePasswordView(){
+        return view('auth.reset')->with('title', 'Ganti Password');
+    }
+
+    public function changePassword(Request $request){
+        try{
+            $user = User::firstwhere('id', Auth::user()->id);
+            
+            $user->password = Hash::make($request->password);
+
+            $user->save();
+
+            return response()->json([
+                'status' => '200',
+                'message' => 'Success change password',
+            ], 200);
 
         }catch(Exception $err){
             return response()->json([

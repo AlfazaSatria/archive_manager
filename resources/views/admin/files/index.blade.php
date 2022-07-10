@@ -6,24 +6,27 @@
     <div class="card-header">
         <h4>Daftar File</h4>
         <div class="card-header-action">
-            <a href="{{ route('files.show.add.file') }}" class="btn btn-icon icon-left btn-info"><i
-                    class="fas fa-plus" type="button"></i>Tambah File
+            <a href="{{ route('files.show.add.file') }}" class="btn btn-icon icon-left btn-info"><i class="fas fa-plus"
+                    type="button"></i>Tambah File
+            </a>
+            <a href="{{ route('files.show.add.file') }}" class="btn btn-icon icon-left btn-info"><i class="fas fa-plus"
+                    type="button"></i>Tambah File
             </a>
         </div>
     </div>
     <div class="card-body">
         <div class="table-responsive">
-                <table id="table-files" class="table table-striped table-bordered" style="width:100%">
+            <table id="table-files" class="table table-striped table-bordered" style="width:100%">
             </table>
         </div>
     </div>
     <div class="card-footer bg-whitesmoke">
-       Indofood
+        Indofood
     </div>
 </div>
 
 <script type="text/javascript">
-$.ajaxSetup({
+    $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
