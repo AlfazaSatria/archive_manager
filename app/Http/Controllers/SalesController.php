@@ -44,8 +44,8 @@ class SalesController extends Controller
         $bumbu = Bumbu::all();
         $bulkexport = BulkExport::all();
         $sayur = Sayur::all();
-        $month= Month::all();
-        return view('admin.sales.addSales')->with('title', 'Tambah Sales')->with('bumbuexport', $bumbuexport)->with('minyak', $minyak)->with('bumbu', $bumbu)->with('bulkexport', $bulkexport)->with('sayur', $sayur)->with('month', $month);
+        $months= Month::all();
+        return view('admin.sales.addSales')->with('title', 'Tambah Sales')->with('bumbuexport', $bumbuexport)->with('minyak', $minyak)->with('bumbu', $bumbu)->with('bulkexport', $bulkexport)->with('sayur', $sayur)->with('months', $months);
     }
 
     public function addSales(Request $request)
@@ -53,23 +53,32 @@ class SalesController extends Controller
         try {
             $request->validate([
                 'month_id' => 'required',
-                'year' => 'required|numeric',
-                'order' => 'required|numeric',
-                'sales' => 'required|numeric',
+                'year' => 'required',
+                'order' => 'required',
+                'sales' => 'required',
             ]);
+            $sales = new Sales();
+            $sales->month_id = $request->month_id;
+            $sales->year = $request->year;
 
-            $sales = Sales::create([
-                'month_id' =>  $request['month_id'],
-                'year' =>  $request['year'],
-                'bumbu_export_id' =>  $request['bumbu_export_id'],
-                'minyak_id' =>  $request['minyak_id'],
-                'bumbu_id' =>  $request['bumbu_id'],
-                'bulkexport_id' =>  $request['bulkexport_id'],
-                'sayur_id' =>  $request['sayur_id'],
-                'order' =>  $request['order'],
-                'sales' =>  $request['sales'],
-                'acv' =>  $request['sales']/$request['order']*100,
-            ]);
+
+            if($request->sales_id ==1){
+                $sales->bumbu_id = $request->delivery_id;
+            }else if($request->sales_id ==2){
+                $sales->bumbu_export_id = $request->delivery_id;
+            }else if($request->sales_id ==3){
+                $sales->minyak_id = $request->delivery_id;
+            }else if($request->sales_id ==4){
+                $sales->bulkexport_id = $request->delivery_id;
+            }else{
+                $sales->sayur_id = $request->delivery_id;
+            }
+
+            $sales->order = $request->order;
+            $sales->sales = $request->sales;
+            $sales->acv= $request->sales/$request->order*100;
+            $sales->save();
+
 
             return response()->json([
                 'status' => '200',
@@ -80,5 +89,21 @@ class SalesController extends Controller
                 'status' => '500',
             ], 500);
         }
+    }
+
+    public function showSales($id){
+        
+        if($id==1){
+            $delivery=Bumbu::all()->pluck("name","id");
+        }else if($id==2){
+            $delivery=BumbuExport::all()->pluck("name","id");
+        }else if($id==3){
+            $delivery=Minyak::all();
+        }else if($id==4){
+            $delivery=BulkExport::all()->pluck("name","id");
+        }else{
+            $delivery=Sayur::all()->pluck("name","id");
+        }
+        return json_encode($delivery);
     }
 }

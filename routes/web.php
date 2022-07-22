@@ -46,3 +46,13 @@ Route::prefix('files')->group(function (){
         Route::get('download/{id}', 'FileController@downloadFile')->name('download.file');
     });
 });
+
+Route::prefix('sales')->group(function () {
+    Route::name('sales.')->group(function () {
+        Route::get('index', 'SalesController@index')->name('show');
+        Route::get('show/add/sales', 'SalesController@showAddSales')->name('show.add.sales');
+        Route::post('add', 'SalesController@addsales')->name('add');
+        Route::delete('delete/{id}', 'SalesController@destroy')->name('destroy');
+        Route::get('show/delivery/sales/{id}', 'SalesController@showSales')->name('show.delivery.sales');
+    });
+});

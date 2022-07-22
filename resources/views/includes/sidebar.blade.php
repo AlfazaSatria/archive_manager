@@ -17,6 +17,11 @@
 					<i class="fas fa-building"></i><span>Departemen</span>
 				</a>
 			</li>
+			<li class="@if ($title == 'Sales') active @endif">
+				<a class="nav-link" href="{{ route('sales.show') }}">
+					<i class="fas fa-building"></i><span>Sales</span>
+				</a>
+			</li>
 			@endif
 			<li class="@if ($title == 'File') active @endif">
 				<a class="nav-link" href="{{ route('files.show') }}">
