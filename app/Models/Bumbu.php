@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bumbu extends Model
 {
-    protected $table = 'bumbu';
+    protected $table = 'bumbus';
 
     protected $fillable=[
         'name',

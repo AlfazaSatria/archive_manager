@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BulkExport extends Model
+class Month extends Model
 {
-    protected $table = 'bulk_exports';
-    
-    protected $fillable=[
+    protected $table = 'months';
+
+    protected $fillable = [
         'name',
         'slug'
     ];

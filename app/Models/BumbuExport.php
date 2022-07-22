@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BumbuExport extends Model
 {
-    protected $table = 'bumbu_export';
+    protected $table = 'bumbu_exports';
     
     protected $fillable=[
         'name',
