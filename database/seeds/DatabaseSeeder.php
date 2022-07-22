@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,7 +12,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(DepartmentSeeder::class);
-        $this->call(UsersSeeder::class);
+        $this->call(MinyakSeeder::class);
+        $this->call(BumbuSeeder::class);
+        $this->call(BulkExportSeeder::class);
+        $this->call(SayurSeeder::class);
+        $this->call(BumbuExportSeeder::class);
     }
 }

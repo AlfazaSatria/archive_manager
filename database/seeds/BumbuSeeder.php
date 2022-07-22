@@ -12,42 +12,42 @@ class BumbuSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        DB::table('bumbus')->insert([
             'name' => 'Indomie',
             'slug' => 'indomie'
         ]);
 
-        DB::table('users')->insert([
+        DB::table('bumbus')->insert([
             'name' => 'Sarimi',
             'slug' => 'sarimi'
         ]);
 
-        DB::table('users')->insert([
+        DB::table('bumbus')->insert([
             'name' => 'Supermi',
             'slug' => 'supermi'
         ]);
 
-        DB::table('users')->insert([
+        DB::table('bumbus')->insert([
             'name' => 'Intermi',
             'slug' => 'intermi'
         ]);
 
-        DB::table('users')->insert([
+        DB::table('bumbus')->insert([
             'name' => 'Sakura',
             'slug' => 'sakura'
         ]);
 
-        DB::table('users')->insert([
+        DB::table('bumbus')->insert([
             'name' => 'Pop Mie',
             'slug' => 'pop-mie'
         ]);
 
-        DB::table('users')->insert([
+        DB::table('bumbus')->insert([
             'name' => 'Non Brand',
             'slug' => 'non-brand'
         ]);
 
-        DB::table('users')->insert([
+        DB::table('bumbus')->insert([
             'name' => 'SI',
             'slug' => 'si'
         ]);

@@ -11,34 +11,34 @@ class MinyakSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        DB::table('minyaks')->insert([
             'name' => 'Indomie',
             'slug' => 'indomie'
         ]);
 
-        DB::table('users')->insert([
+        DB::table('minyaks')->insert([
             'name' => 'Sarimi',
             'slug' => 'sarimi'
         ]);
 
-        DB::table('users')->insert([
+        DB::table('minyaks')->insert([
             'name' => 'Supermi',
             'slug' => 'supermi'
         ]);
 
-        DB::table('users')->insert([
-            'name' => 'Intermi',
-            'slug' => 'intermi'
-        ]);
-
-        DB::table('users')->insert([
+        DB::table('minyaks')->insert([
             'name' => 'Sakura',
             'slug' => 'sakura'
         ]);
 
-        DB::table('users')->insert([
+        DB::table('minyaks')->insert([
             'name' => 'Pop Mie',
             'slug' => 'pop-mie'
+        ]);
+
+        DB::table('minyaks')->insert([
+            'name' => 'Minyak Bawang',
+            'slug' => 'minyak-bawang'
         ]);
     }
 }
