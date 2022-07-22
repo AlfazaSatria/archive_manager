@@ -22,7 +22,7 @@ class SalesController extends Controller
 
     public function index()
     {
-        $sales = Sales::all();
+        $sales = Sales::with('bumbu', 'minyak', 'bumbu_export', 'bulk_export', 'sayur', 'month')->get();
         if (request()->ajax()) {
             return Datatables::of($sales)
             ->addIndexColumn()
