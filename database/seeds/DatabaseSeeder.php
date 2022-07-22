@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(BulkExportSeeder::class);
         $this->call(SayurSeeder::class);
         $this->call(BumbuExportSeeder::class);
+        $this->call(MonthSeeder::class);
     }
 }
