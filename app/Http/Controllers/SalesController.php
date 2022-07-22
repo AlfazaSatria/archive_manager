@@ -76,7 +76,9 @@ class SalesController extends Controller
 
             $sales->order = $request->order;
             $sales->sales = $request->sales;
-            $sales->acv= $request->sales/$request->order*100;
+            $count=$request->sales/$request->order*100;
+            $result=number_format($count);
+            $sales->acv=$result ;
             $sales->save();
 
 
