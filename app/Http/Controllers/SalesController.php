@@ -100,7 +100,7 @@ class SalesController extends Controller
         }else if($id==2){
             $delivery=BumbuExport::all()->pluck("name","id");
         }else if($id==3){
-            $delivery=Minyak::all();
+            $delivery=Minyak::all()->pluck("name","id");
         }else if($id==4){
             $delivery=BulkExport::all()->pluck("name","id");
         }else{
