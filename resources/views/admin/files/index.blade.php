@@ -9,9 +9,7 @@
             <a href="{{ route('files.show.add.file') }}" class="btn btn-icon icon-left btn-info"><i class="fas fa-plus"
                     type="button"></i>Tambah File
             </a>
-            <a href="{{ route('files.show.add.file') }}" class="btn btn-icon icon-left btn-info"><i class="fas fa-plus"
-                    type="button"></i>Tambah File
-            </a>
+            
         </div>
     </div>
     <div class="card-body">

@@ -16,7 +16,7 @@
       
       
       <div class="form-group">
-        <label for="desc">Alamat (Optional)</label>
+        <label for="desc">Akses View</label>
         <input type="text" class="form-control" id="description" name="description" placeholder="Deskripsi">
       </div>
       
