@@ -23,28 +23,53 @@ class DepartmentSeeder extends Seeder
         ]);
 
         DB::table('departments')->insert([
-            'name' => 'Accounting Manager',
-            'description' => 'Accounting View'
+            'name' => 'Sekretaris',
+            'description' => 'All View'
         ]);
 
         DB::table('departments')->insert([
-            'name' => 'Product Manager',
-            'description' => 'Product View'
+            'name' => 'Document Control',
+            'description' => 'Document Control View'
         ]);
 
         DB::table('departments')->insert([
-            'name' => 'Personalia Manager',
-            'description' => 'Personalia View'
+            'name' => 'Production Manager',
+            'description' => 'Production View'
         ]);
 
         DB::table('departments')->insert([
-            'name' => 'Human Resource',
-            'description' => 'HR View'
+            'name' => 'Produksi Minyak',
+            'description' => 'Produksi Minyak View'
         ]);
 
         DB::table('departments')->insert([
-            'name' => 'Safety Healty Environment',
-            'description' => 'SHE View'
+            'name' => 'Produksi Bumbu',
+            'description' => 'Produksi Bumbu View'
+        ]);
+
+        DB::table('departments')->insert([
+            'name' => 'Quality Control',
+            'description' => 'QCH View'
+        ]);
+
+        DB::table('departments')->insert([
+            'name' => 'Hygiene',
+            'description' => 'QCH View'
+        ]);
+
+        DB::table('departments')->insert([
+            'name' => 'Maintenance',
+            'description' => 'Teknik View'
+        ]);
+
+        DB::table('departments')->insert([
+            'name' => 'Utility',
+            'description' => 'Teknik View'
+        ]);
+
+        DB::table('departments')->insert([
+            'name' => 'Project',
+            'description' => 'Teknik View'
         ]);
 
         DB::table('departments')->insert([
@@ -53,43 +78,23 @@ class DepartmentSeeder extends Seeder
         ]);
 
         DB::table('departments')->insert([
-            'name' => 'Technic',
-            'description' => 'Technic View'
+            'name' => 'Safety Healty Environment',
+            'description' => 'HRD View'
         ]);
 
         DB::table('departments')->insert([
-            'name' => 'Production Planning Inventory Control',
-            'description' => 'PPIC View'
+            'name' => 'GAS',
+            'description' => 'HRD View'
         ]);
 
         DB::table('departments')->insert([
-            'name' => 'Quality Control',
-            'description' => 'QC View'
+            'name' => 'IR',
+            'description' => 'HRD View'
         ]);
 
         DB::table('departments')->insert([
             'name' => 'Purchasing',
             'description' => 'Purchasing View'
-        ]);
-
-        DB::table('departments')->insert([
-            'name' => 'Product Sauce',
-            'description' => 'Product Sauce View'
-        ]);
-
-        DB::table('departments')->insert([
-            'name' => 'Product Oil',
-            'description' => 'Product Oil View'
-        ]);
-
-        DB::table('departments')->insert([
-            'name' => 'Manufacturing',
-            'description' => 'Manufacturing View'
-        ]);
-
-        DB::table('departments')->insert([
-            'name' => 'Hygiene',
-            'description' => 'Hygiene View'
         ]);
 
         DB::table('departments')->insert([
