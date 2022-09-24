@@ -22,7 +22,11 @@
   <div class="card-header">
     <h4>Indofood</h4>
   </div>
+  {{-- <p>
+    {{$bumbufilter}}
+  </p> --}}
   <div class="card-body">
+    {{-- <div id="bumbu" style="height: 300px;"></div> --}}
     <p>
       Admin Tools Indofood
     </p>
@@ -32,6 +36,12 @@
   </div>
 </div>
 
+{{-- <script>
+  const chart = new Chartisan({
+    el: '#bumbu',
+    url: "@chart('home_chart')"
+  });
+</script> --}}
 
 
 @endsection

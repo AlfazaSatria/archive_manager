@@ -13,7 +13,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-
+<script src="https://unpkg.com/echarts/dist/echarts.min.js"></script>
+<script src="https://unpkg.com/@chartisan/echarts/dist/chartisan_echarts.js"></script>
 
 
 <style>
