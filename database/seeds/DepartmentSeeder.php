@@ -28,14 +28,15 @@ class DepartmentSeeder extends Seeder
         ]);
 
         DB::table('departments')->insert([
+            'name' => 'Production Manager',
+            'description' => 'Production View'
+        ]);
+
+        DB::table('departments')->insert([
             'name' => 'Document Control',
             'description' => 'Document Control View'
         ]);
 
-        DB::table('departments')->insert([
-            'name' => 'Production Manager',
-            'description' => 'Production View'
-        ]);
 
         DB::table('departments')->insert([
             'name' => 'Produksi Minyak',

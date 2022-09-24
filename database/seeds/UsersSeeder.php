@@ -17,7 +17,7 @@ class UsersSeeder extends Seeder
             'name' => 'superadmin',
             'email' => 'sa@indofood.com',
             'department_id' => '1',
-            'password' => Hash::make('admmin123')
+            'password' => Hash::make('admin123')
         ]);
 
         DB::table('users')->insert([
@@ -28,24 +28,20 @@ class UsersSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name' => 'accountingmanager',
-            'email' => 'accountingmanager@indofood.com',
+            'name' => 'sekretaris',
+            'email' => 'sekretaris@indofood.com',
             'department_id' => '3',
-            'password' => Hash::make('accounting000.')
+            'password' => Hash::make('sekretaris123.')
         ]);
 
+        
         DB::table('users')->insert([
-            'name' => 'productmanager',
-            'email' => 'productmanager@indofood.com',
+            'name' => 'productionmanager',
+            'email' => 'productionmanager@indofood.com',
             'department_id' => '4',
-            'password' => Hash::make('product988.')
+            'password' => Hash::make('product123.')
         ]);
 
-        DB::table('users')->insert([
-            'name' => 'personaliamanager',
-            'email' => 'personaliamanager@indofood.com',
-            'department_id' => '5',
-            'password' => Hash::make('personalia755.')
-        ]);
+       
     }
 }
