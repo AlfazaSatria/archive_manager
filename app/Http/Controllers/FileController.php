@@ -59,17 +59,11 @@ class FileController extends Controller
 
     public function showAddFile()
     {   
-        if (Auth::user()->department_id == 1 || Auth::user()->department_id == 2) {
+        if (Auth::user()->department_id == 1 || Auth::user()->department_id == 2 || Auth::user()->department_id == 3) {
             $departments = Department::all();
             
-        }else if(Auth::user()->department_id == 3){
-            $departments = Department::whereIn('id', [3,17])->get();
-          
         }else if(Auth::user()->department_id == 4){
-            $departments = Department::whereIn('id', [4,13,14])->get();
-            
-        }else if(Auth::user()->department_id == 5){
-            $departments = Department::whereIn('id', [5,6,7])->get();
+            $departments = Department::whereIn('id', [4,5,6])->get();
           
         }else{
             $departments = Department::where('id', Auth::user()->department_id)->get();
