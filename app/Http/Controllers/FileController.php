@@ -21,18 +21,21 @@ class FileController extends Controller
 
     public function index()
     {
-        if (Auth::user()->department_id == 1 || Auth::user()->department_id == 2) {
+        if (Auth::user()->department_id == 1 || Auth::user()->department_id == 2 || Auth::user()->department_id == 3) {
             $departments = Department::all();
             $files=File::with('department')->get();
-        }else if(Auth::user()->department_id == 3){
-            $departments = Department::whereIn('id', [3,17])->get();
-            $files=File::with('department')->whereIn('department_id', [3,17])->get();
         }else if(Auth::user()->department_id == 4){
-            $departments = Department::whereIn('id', [4,13,14])->get();
-            $files=File::with('department')->whereIn('department_id', [4,13,14])->get();
-        }else if(Auth::user()->department_id == 5){
-            $departments = Department::whereIn('id', [5,6,7])->get();
-            $files=File::with('department')->whereIn('department_id', [5,6,7])->get();
+            $departments = Department::whereIn('id', [4,5,6])->get();
+            $files=File::with('department')->whereIn('department_id', [4,5,6])->get();
+        }else if(Auth::user()->department_id == 8 || Auth::user()->department_id == 9){
+            $departments = Department::whereIn('id', [8,9])->get();
+            $files=File::with('department')->whereIn('department_id', [8,9])->get();
+        }else if(Auth::user()->department_id == 10 || Auth::user()->department_id == 11 || Auth::user()->department_id == 12){
+            $departments = Department::whereIn('id', [10,11,12])->get();
+            $files=File::with('department')->whereIn('department_id', [10,11,12])->get();
+        }else if(Auth::user()->department_id == 14 || Auth::user()->department_id == 15 || Auth::user()->department_id == 16){
+            $departments = Department::whereIn('id', [14,15,16])->get();
+            $files=File::with('department')->whereIn('department_id', [14,15,16])->get();
         }else{
             $departments = Department::firstwhere('id', Auth::user()->department_id);
             $files=File::where('department_id', Auth::user()->department_id)->get();
