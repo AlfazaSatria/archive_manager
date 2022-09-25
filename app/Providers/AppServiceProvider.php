@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Blade;
 use Storage;
 use League\Flysystem\Filesystem;
 use League\Flysystem\Sftp\SftpAdapter;
-use ConsoleTVs\Charts\Registrar as Charts;
+
 
 
 class AppServiceProvider extends ServiceProvider
@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(Charts $charts)
+    public function boot()
     {
         Schema::defaultStringLength(191);
         Blade::directive('currency', function ($expression) {
@@ -37,9 +37,7 @@ class AppServiceProvider extends ServiceProvider
         Storage::extend('sftp', function ($app, $config) {
             return new Filesystem(new SftpAdapter($config));
         });
-        $charts->register([
-            \App\Charts\HomeChart::class
-        ]);
+        
        
        
     }
