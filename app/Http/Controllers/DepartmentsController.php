@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Department;
 use Illuminate\Http\Request;
 use DataTables;
+use App\Models\Groups;
 use Exception;
 
 class DepartmentsController extends Controller
@@ -16,15 +17,23 @@ class DepartmentsController extends Controller
     
     public function index()
     {
-        $departments = Department::all();
+        $groups = Groups::all();
         if (request()->ajax()) {
-            return Datatables::of($departments)
+            return Datatables::of($groups)
             ->addIndexColumn()
-            ->addColumn('action', function ($departments) {
-                $button = '<button id="delete" class="btn  btn-danger" data-id="' . $departments->id . '">Delete</button>';
-                return $button;
+            // ->addColumn('action', function ($groups) {
+            //     $button = '<button id="delete" class="btn  btn-danger" data-id="' . $departments->id . '">Delete</button>';
+            //     return $button;
+            // })
+            // ->rawColumns(['action'])
+            ->editColumn('department', function ($groups) {
+              
+                $department = $groups->id;
+                $name = $groups->name;
+                $link = '<a href="' . route('departments.show.index.department', $department) . '">' . $name . '</a>';
+                return $link;
             })
-            ->rawColumns(['action'])
+            ->rawColumns(['department'])
             ->make(true);
         }
         return view('admin.departments.index')->with('title', 'Departemen');
@@ -34,6 +43,22 @@ class DepartmentsController extends Controller
     public function showAddDepartment()
     {
         return view('admin.departments.addDepartments')->with('title', 'Tambah Departemen');
+    }
+
+    public function dataDepartments($id)
+    {
+        if (request()->ajax()) {
+            $departments = Department::where('group_id', '=', $id)->get();
+            return Datatables::of($departments)
+                ->addIndexColumn()
+               ->addColumn('action', function ($departments) {
+                $button = '<button id="delete" class="btn  btn-danger" data-id="' . $departments->id . '">Delete</button>';
+                return $button;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        return view('admin.departments.groups')->with('title', 'Groups');
     }
 
    

@@ -4,7 +4,7 @@
 
 <div class="card">
     <div class="card-header">
-        <h4>Daftar Departemen</h4>
+        <h4>List Department</h4>
         <div class="card-header-action">
             <a href="{{ route('departments.show.add.department') }}" class="btn btn-icon icon-left btn-info"><i
                     class="fas fa-plus" type="button"></i>Tambah Departemen
@@ -13,7 +13,7 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-                <table id="table-departments" class="table table-striped table-bordered" style="width:100%">
+                <table id="table-groups" class="table table-striped table-bordered" style="width:100%">
             </table>
         </div>
     </div>
@@ -29,7 +29,7 @@ $.ajaxSetup({
         }
 });
     $(function() {
-        var oTable = $('#table-departments').DataTable({
+        var oTable = $('#table-groups').DataTable({
           "columnDefs": [{
                 "defaultContent": "-",
                 "targets": "_all"
@@ -41,7 +41,7 @@ $.ajaxSetup({
             },
             columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex', title: 'No'},
-            {data: 'department', name: 'department', title: 'Nama Departemen'},
+            {data: 'name', name: 'name', title: 'Nama Departemen'},
            
         ],
         });
