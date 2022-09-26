@@ -34,7 +34,7 @@ Route::prefix('departmens')->group(function () {
         Route::get('show/add/department', 'DepartmentsController@showAddDepartment')->name('show.add.department');
         Route::post('add', 'DepartmentsController@addDepartments')->name('add');
         Route::delete('delete/{id}', 'DepartmentsController@destroy')->name('destroy');
-        Route::get('index/groups/{id}', 'Departments\DepartmentController@dataDepartments')->name('show.index.department');
+        Route::get('index/groups/{id}', 'DepartmentsController@dataDepartments')->name('show.index.department');
     });
 });
 
