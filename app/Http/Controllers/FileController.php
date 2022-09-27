@@ -25,8 +25,8 @@ class FileController extends Controller
             $departments = Department::all();
             $files=File::with('department')->get();
         }else if(Auth::user()->department_id == 4){
-            $departments = Department::whereIn('id', [4,5,6])->get();
-            $files=File::with('department')->whereIn('department_id', [4,5,6])->get();
+            $departments = Department::whereIn('id', [4,6,7])->get();
+            $files=File::with('department')->whereIn('department_id', [4,6,7])->get();
         }else if(Auth::user()->department_id == 8 || Auth::user()->department_id == 9){
             $departments = Department::whereIn('id', [8,9])->get();
             $files=File::with('department')->whereIn('department_id', [8,9])->get();
