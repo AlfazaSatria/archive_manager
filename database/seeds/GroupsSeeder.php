@@ -44,6 +44,9 @@ class GroupsSeeder extends Seeder
             'name' => 'Departemen Accounting'
         ]);
 
+        DB::table('groups')->insert([
+            'name' => 'Departemen PPIC'
+        ]);
       
     }
 }

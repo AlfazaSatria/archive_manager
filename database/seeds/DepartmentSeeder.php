@@ -118,5 +118,11 @@ class DepartmentSeeder extends Seeder
             'group_id' => 8,
             'description' => 'Accounting View'
         ]);
+
+        DB::table('departments')->insert([
+            'name' => 'PPIC',
+            'group_id' => 9,
+            'description' => 'PPIC View'
+        ]);
     }
 }
